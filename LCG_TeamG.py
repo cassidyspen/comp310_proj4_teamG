@@ -1,6 +1,6 @@
 """
-LCG_TeamG.py
-Team G's implementation of Linear Congruential Generator (LCG)
+LCG_Team5.py
+Team 5's implementation of Linear Congruential Generator (LCG)
 Names:Ajay Samra, Claire Ingrey, Cassidy Spencer, Kevin Nhu, and Katrina Baha
 Date: 5/2/22
 """
@@ -9,24 +9,23 @@ import datetime
 today = datetime.datetime.now()
 now = today.second
 
-#x(i+1) = (a * x(i) + c) mod m
-#xi = seed number (maybe w/ clock)
+#formula: x(i+1) = (a * x(i) + c) mod m
+#xi = seed number (now is xi)
 #a = multiplier
 #c = increment
 #m = modulus
 
-#source: ZX81
-#2nd source: https://dl.acm.org/doi/pdf/10.5555/2955239.2955463 on 5/2/22
-#x_initial = now
-m = 15
-a = 106
-c = 1283
+#source: https://dl.acm.org/doi/pdf/10.5555/2955239.2955463 on 5/2/22
+m = 22873
+a = 6943
+c = 5593
 
-def LCG_TeamG(seed):
+def LCG_Team5(seed):
     random_num = (a * seed + c)%m
     return random_num 
 
+# mod by 28 because there are 28 colors to choose from 
 if __name__ == "__main__":
     for i in range (50):
         now = LCG_Team5(now)
-        print (now)
+        print (now%28)
