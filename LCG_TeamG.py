@@ -1,5 +1,5 @@
 """
-LCG_Team5.py
+LCG_TeamG.py
 Team 5's implementation of Linear Congruential Generator (LCG)
 Names:Ajay Samra, Claire Ingrey, Cassidy Spencer, Kevin Nhu, and Katrina Baha
 Date: 5/2/22
@@ -20,7 +20,7 @@ m = 22873
 a = 6943
 c = 5593
 
-def LCG_Team5(seed):
+def LCG_TeamG(seed):
     random_num = (a * seed + c)%m
     return random_num 
 
