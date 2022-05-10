@@ -6,6 +6,54 @@ Date: 5/2/22
 """
 import LCG_TeamG
 import datetime
+from tkinter import *
+
+#root = Tk()
+#root.title("Random Paint Application")
+#root.geometry("500x300")
+
+
+class PaintApp: 
+
+    def __init__(self,root):
+        self.root = root
+        self.color = "blue"
+        color_button = Button(root, text="New color", command = self.coloring ).pack()
+        self.wn=Canvas(root, width=500, height=350, bg='white')
+        self.wn.bind('<B1-Motion>', self.paint)
+        self.wn.bind("<ButtonPress-1>", self.coloring)
+        self.wn.pack()
+
+    def coloring(self):
+        self.color = "red"
+
+
+    def paint(self,event):
+        x1, y1 = (event.x-3), (event.y-3)
+        x2,y2 = (event.x+3), (event.y+3)
+        self.wn.create_oval(x1,y1,x2,y2,fill=self.color,outline=self.color)
+
+    
+
+# create canvas
+#wn=Canvas(root, width=500, height=350, bg='white')
+
+#button_frame = Frame(root, width = 400, height = 50)
+#button_frame.grid(row = 2, column = 1)
+
+#color_button = Button(root, text="New color", command = coloring).pack()
+#color_button.grid(row=1, column=1)
+
+# bind mouse event with canvas(wn)
+#wn.bind('<B1-Motion>', self.paint)
+#wn.bind("<ButtonPress-1>", color)
+#wn.pack()
+root = Tk()
+root.title("Random Paint Application")
+root.geometry("500x300")
+app = PaintApp(root)
+root.mainloop()
+
 
 def PaintNumber(now):
         now = LCG_TeamG.LCG_TeamG(now)
