@@ -23,15 +23,25 @@ class PaintApp:
         self.wn.bind('<B1-Motion>', self.paint)
         self.wn.bind("<ButtonPress-1>", self.coloring)
         self.wn.pack()
+        self.colorList = ["red","orange","yellow","green","blue","purple","brown",
+                            "green3", "tan1","slateblue2","red4","purple4",
+                            "raspberry","pink","palegreen","black","gray",
+                            "midnightblue","maroon2","lightgoldenrod1"]
 
     def coloring(self):
-        self.color = "red"
+        self.color = self.colorList[self.PaintNumber()]
 
 
     def paint(self,event):
         x1, y1 = (event.x-3), (event.y-3)
         x2,y2 = (event.x+3), (event.y+3)
         self.wn.create_oval(x1,y1,x2,y2,fill=self.color,outline=self.color)
+
+    def PaintNumber(self):
+        today = datetime.datetime.now()
+        now = today.second
+        now = LCG_TeamG.LCG_TeamG(now)
+        return (now%20)
 
     
 
@@ -56,8 +66,8 @@ root.mainloop()
 
 
 def PaintNumber(now):
-        now = LCG_TeamG.LCG_TeamG(now)
-        return (now%28)
+    now = LCG_TeamG.LCG_TeamG(now)
+    return (now%28)
 
 def PaintNumberList():
     today = datetime.datetime.now()
@@ -83,6 +93,3 @@ def ColoringBook(paintnumbers):
 if __name__ == "__main__":
     paintnumbers = PaintNumberList()
     ColoringBook(paintnumbers)
-
-    
-       
