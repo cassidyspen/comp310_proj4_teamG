@@ -1,6 +1,6 @@
 """
 Application_TeamG.py
-Team 5's application of Linear Congruential Generator (LCG)
+Team G's application of Linear Congruential Generator (LCG)
 Names:Ajay Samra, Claire Ingrey, Cassidy Spencer, Kevin Nhu, and Katrina Baha
 Date: 5/2/22
 """
