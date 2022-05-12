@@ -13,28 +13,21 @@ def mean(numList):
     y = 0
     for x in numList:
         y = x + y
-    return y/280
+    return y/2000000
 
 def numAmt(numList):
     numNums = []
     x = 0
-    for x in range(28):
+    for x in range(20):
         numNums.append(numList.count(x))
         x+=1
     return numNums
 
-
-"""def hist():
-    plt.pyplot.hist(df["deaths"])
-    # set x/y labels and plot title what are they?
-    plt.pyplot.xlabel("number of deaths")
-    plt.pyplot.ylabel("count")
-    plt.pyplot.title("Death bins")"""
-
 if __name__ == "__main__":
     numList = []
-    for i in range(1000000):
+    for i in range(2000000):
         now = LCG_TeamG.LCG_TeamG(now)
-        numList.append(now%28)
+        numList.append(now%20)
     #print (numList)
     print(numAmt(numList))
+    print("The mean is ", mean(numList))

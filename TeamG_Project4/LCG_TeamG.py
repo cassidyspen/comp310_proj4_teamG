@@ -1,6 +1,6 @@
 """
 LCG_TeamG.py
-Team 5's implementation of Linear Congruential Generator (LCG)
+Team G's implementation of Linear Congruential Generator (LCG)
 Names:Ajay Samra, Claire Ingrey, Cassidy Spencer, Kevin Nhu, and Katrina Baha
 Date: 5/2/22
 """
@@ -23,9 +23,3 @@ c = 5593
 def LCG_TeamG(seed):
     random_num = (a * seed + c)%m
     return random_num 
-
-# mod by 28 because there are 28 colors to choose from 
-if __name__ == "__main__":
-    '''for i in range (50):
-        now = LCG_TeamG(now)
-        print (now%28)'''
